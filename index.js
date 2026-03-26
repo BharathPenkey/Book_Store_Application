@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 // const app = express()
 
-const router = require("./routes/BookRoute");
+const router = require("./BookRoute");
 
 const app = express()
 
@@ -13,14 +13,23 @@ app.use("/books",router)
 
 // app.use(express.json())
 
-mongoose.connect("mongodb+srv://bharath:bharath@cluster0.w1gr51t.mongodb.net/bookstore?retryWrites=true&w=majority"
-).then(()=>{
-console.log('connected to db ')
-})
-.then(()=>{
-    app.listen(5001)
-})
-.catch((err)=>{
-    console.log(err)
+const connectDB = async ()=>{
+   try{
+     await mongoose.connect("mongodb+srv://penkybharath:penkybharath@cluster0.l1d1qzf.mongodb.net/BookStoreDB"); //  no symbols like < @
+    console.log("Connected to DB Successfully")
+   }
+   catch(err){
+    console.error("DB Error:", err);
+    process.exit(1) ; // stops the  server
+   }
+
+}
+connectDB();
+app.get("/" , (req,res)=>{
+    res.send("Hi hello from server");
+
 })
 
+app.listen(5000, ()=>{
+    console.log(`Server running on port 5000}`)
+})

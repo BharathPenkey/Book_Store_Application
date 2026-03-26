@@ -1,5 +1,5 @@
-const Book = require("../models/Book");
-const { get } = require("../routes/BookRoute");
+const Book = require("./Book");
+const { get } = require("./BookRoute");
 
 
 const getAllBooks = async (req,res,next)=>{
