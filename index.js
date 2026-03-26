@@ -26,7 +26,7 @@ const connectDB = async ()=>{
 }
 connectDB();
 app.get("/" , (req,res)=>{
-    res.send("Hi hello from server");
+    res.send("Server Running ..!");
 
 })
 
