@@ -1,10 +1,15 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const cors =require('cors')
 // const app = express()
 
 const router = require("./BookRoute");
 
 const app = express()
+
+app.use(cors({
+  origin: 'http://localhost:5173'
+}));
 
 // middleware
 app.use(express.json())
