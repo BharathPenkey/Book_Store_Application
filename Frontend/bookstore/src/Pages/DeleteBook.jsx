@@ -12,13 +12,13 @@ const DeleteBook = () => {
     const [error, setError] = useState("");
 
     const handleDelete = async () => {
-        // 🔑 Simple passkey check
-        if (passkey.trim().toLowerCase() !== "deletebook") {
+        // 🔑 Simple passkey check - Bharath@5721
+        if (passkey.trim().toLowerCase() !== "qwerty@5721") {
             setError("Invalid passkey. Contact author.");
             return;
         }
 
-        await axios.delete(`http://localhost:5000/books/${id}`);
+        await axios.delete(`https://book-store-application-du8n.onrender.com/books/${id}`);
         navigate("/home");
     };
 
@@ -42,7 +42,7 @@ const DeleteBook = () => {
                 </p>
 
                 <input
-                    type="text"
+                    type="password"
                     placeholder="Enter passkey..."
                     value={passkey}
                     onChange={(e) => {

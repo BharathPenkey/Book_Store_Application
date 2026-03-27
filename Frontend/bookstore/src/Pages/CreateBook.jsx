@@ -52,7 +52,7 @@ const CreateBook = () => {
                 image: imageUrl,
             };
 
-            await axios.post("http://localhost:5000/books", payload);
+            await axios.post(`https://book-store-application-du8n.onrender.com/books`, payload);// http://localhost:5000/books"
 
             navigate("/home");
         } catch (err) {

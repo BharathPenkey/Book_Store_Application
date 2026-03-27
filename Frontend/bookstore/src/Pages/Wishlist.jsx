@@ -56,7 +56,7 @@ const Wishlist = () => {
                                     key={book._id}
                                     className="bg-white p-2 rounded-2xl shadow-md overflow-hidden transition duration-300 hover:shadow-2xl hover:-translate-y-1"
                                 >
-                                    {/* Image */}
+
                                     <div className="w-full h-56 bg-gray-100 flex items-center justify-center overflow-hidden rounded-t-2xl">
                                         <img
                                             src={book.image}

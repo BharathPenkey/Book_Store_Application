@@ -73,7 +73,7 @@ const EditBook = () => {
                 imageUrl = await uploadImageToCloudinary(file);
             }
 
-            await axios.put(`http://localhost:5000/books/${id}`, {
+            await axios.put(`https://book-store-application-du8n.onrender.com/books/${id}`, { // http://localhost:5000/books/${id}
                 ...form,
                 price: Number(form.price),
                 image: imageUrl,
@@ -112,7 +112,6 @@ const EditBook = () => {
                     Edit Book
                 </h1>
                 <form onSubmit={handleUpdate} className="flex flex-col gap-4">
-
                     <div>
                         <input
                             type="text"

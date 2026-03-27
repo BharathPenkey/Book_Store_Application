@@ -11,9 +11,10 @@ const Showbook = () => {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:5000/books/${id}`)
+        .get(`https://book-store-application-du8n.onrender.com/books/${id}`)
+            // .get(`http://localhost:5000/books/${id}`)
             .then((res) => {
-                const bookdetails = res.data.book || res.data;
+                const bookdetails = res.data.book || res.data; // fallback
                 setBook(bookdetails);
             })
             .catch((err) => console.log(err));

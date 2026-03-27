@@ -22,7 +22,8 @@ const Home = () => {
     useEffect(() => {
         setLoading(true);
         axios
-            .get("http://localhost:5000/books")
+            // .get("http://localhost:5000/books")
+            .get(`https://book-store-application-du8n.onrender.com/books`)
             .then((response) => {
                 setBooks(response.data.books);
                 setLoading(false);
@@ -58,8 +59,6 @@ const Home = () => {
             }}
         >
             <div className="bg-black/60 min-h-screen p-6 rounded-xl">
-
-
                 <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
                     <h1 className="text-4xl font-bold text-white tracking-wide flex items-center gap-2">
                         <FiBook className="text-5xl text-blue-400 cursor-pointer" onClick={() => navigate("/")} />
@@ -98,7 +97,7 @@ const Home = () => {
                 {loading ? (
                     <Spinner />
                 ) : filteredBooks.length === 0 ? (
-                    <p className="text-white text-center">No books found</p>
+                    <p className="text-white text-center">No books found</p> 
                 ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
 
