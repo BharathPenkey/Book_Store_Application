@@ -7,9 +7,7 @@ const router = require("./BookRoute");
 
 const app = express()
 
-app.use(cors({
-  origin: 'http://localhost:5173'
-}));
+app.use(cors());
 
 // middleware
 app.use(express.json())
